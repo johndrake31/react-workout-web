@@ -1,9 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../../hooks';
+import { selectToken } from '../store/authSlice';
 
 type TypeUserAuthWrapperProps = {
   children: React.ReactNode; // 👈️ added type for children
 };
 const AuthWrapper = (props: TypeUserAuthWrapperProps) => {
+  
+  const jwt = useAppSelector(selectToken);
+
   /**
    * //TODO: ADD AUTH LOGIC
    *
