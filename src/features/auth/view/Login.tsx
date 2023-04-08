@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { UseSetToken } from '../UseSetToken';
 import loginApi from '../api/login';
 import { IAuth } from '../types/Auth';
+import { useNavigate } from 'react-router-dom';
+import { Routes } from '../../../constants/routes';
 
 const Login = () => {
-  const { setJwtHandler } = UseSetToken();
   const [email, setEmail] = useState<null | string>(null);
   const [password, setPassword] = useState<null | string>(null);
+  const { setJwtHandler } = UseSetToken();
+  const navigator = useNavigate();
 
   const loginHandler = async () => {
     if (email && password) {
@@ -17,8 +20,10 @@ const Login = () => {
         password,
       });
       //TODO: REDIRECT AND SETUP AUTH SYSTEM
-
-      setJwtHandler(resp.access_token);
+      if(resp && resp.access_token){
+        setJwtHandler(resp.access_token);
+        navigator(Routes.USER_PROFILE, { replace: true });
+      }
     }
   };
 
