@@ -10,7 +10,7 @@ import { setToken as setNewToken, setUser } from '../store/authSlice';
 import { IAuthDecoded } from '../types/Auth';
 
 type TypeUserAuthWrapperProps = {
-  children: React.ReactNode; // 👈️ added type for children
+  children: React.ReactNode;
 };
 const AuthWrapper = (props: TypeUserAuthWrapperProps) => {
   const dispatch = useAppDispatch();
