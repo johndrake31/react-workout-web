@@ -1,10 +1,10 @@
 import jwtDecode from 'jwt-decode';
 import React, { useEffect, useState } from 'react';
 
-import { useAppDispatch } from '../../hooks';
-import { storeLocalToken } from './helpers/locStorage.helper';
-import { setToken as setNewToken, setUser } from './store/authSlice';
-import { IAuthDecoded } from './types/Auth';
+import { useAppDispatch } from '../../../hooks';
+import { storeLocalToken } from '../helpers/locStorage.helper';
+import { setToken as setNewToken, setUser } from '../store/authSlice';
+import { IAuthDecoded } from '../types/Auth';
 
 export const UseSetToken = () => {
   const [token, setToken] = useState<string| undefined>();

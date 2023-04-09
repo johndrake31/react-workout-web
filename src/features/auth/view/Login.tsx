@@ -1,7 +1,7 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
 
-import { UseSetToken } from '../UseSetToken';
+import { UseSetToken } from '../hooks/UseSetToken';
 import loginApi from '../api/login';
 import { IAuth } from '../types/Auth';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +22,9 @@ const Login = () => {
       //TODO: REDIRECT AND SETUP AUTH SYSTEM
       if(resp && resp.access_token){
         setJwtHandler(resp.access_token);
-        navigator(Routes.USER_PROFILE, { replace: true });
+        setTimeout(() => {
+          navigator(Routes.USER_PROFILE, { replace: true });
+        }, 500);
       }
     }
   };
