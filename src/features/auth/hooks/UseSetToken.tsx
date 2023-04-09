@@ -17,7 +17,6 @@ export const UseSetToken = () => {
     if(!token) return;
     const decodedJwt = jwtDecode<IAuthDecoded | null>(token);
     if (!decodedJwt) return;
-    console.log(decodedJwt);
     storeLocalToken(token);
     dispatch(setNewToken(token));
     dispatch(setUser(decodedJwt));

@@ -19,10 +19,10 @@ const Login = () => {
         email,
         password,
       });
-      //TODO: REDIRECT AND SETUP AUTH SYSTEM
       if(resp && resp.access_token){
         setJwtHandler(resp.access_token);
         setTimeout(() => {
+          //Small delay needed for reudx and localStorage to update before redirect and authWrapper check.
           navigator(Routes.USER_PROFILE, { replace: true });
         }, 500);
       }
