@@ -1,11 +1,11 @@
 import { Box, Button, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
-
-import { UseSetToken } from '../hooks/UseSetToken';
-import loginApi from '../api/login';
-import { IAuth } from '../types/Auth';
 import { useNavigate } from 'react-router-dom';
+
 import { Routes } from '../../../constants/routes';
+import loginApi from '../api/login';
+import { UseSetToken } from '../hooks/UseSetToken';
+import { IAuth } from '../types/Auth';
 
 const Login = () => {
   const [email, setEmail] = useState<null | string>(null);
@@ -19,7 +19,7 @@ const Login = () => {
         email,
         password,
       });
-      if(resp && resp.access_token){
+      if (resp && resp.access_token) {
         setJwtHandler(resp.access_token);
         setTimeout(() => {
           //Small delay needed for reudx and localStorage to update before redirect and authWrapper check.
@@ -55,8 +55,9 @@ const Login = () => {
         }}
       />
       <TextField
-        id="outlined-basic-pass"
+        id="outlined-password-input"
         label="Password"
+        type="password"
         variant="outlined"
         onChange={(event) => {
           setPassword(event.target.value);
