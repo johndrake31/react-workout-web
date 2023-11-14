@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Routes as NavRoutes } from '../constants/routes';
-import AuthWrapper from '../features/auth/view/AuthWrapper';
-import Login from '../features/auth/view/Login';
-import Signup from '../features/auth/view/Signup';
-import UserPage from '../features/user/view/UserPage';
+import AuthWrapper from '../components/auth/view/AuthWrapper';
+import Login from '../components/auth/view/Login';
+import Signup from '../components/auth/view/Signup';
+import UserPage from '../components/user/view/UserProfile';
 import Home from '../screens/Home';
 
 const AuthNav: React.FC = () => {

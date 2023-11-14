@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 
-const UserPage = () => {
+const UserProfile = () => {
   return (
     <>
       <Typography>User Profile Page</Typography>
@@ -9,4 +9,4 @@ const UserPage = () => {
   );
 };
 
-export default UserPage;
+export default UserProfile;

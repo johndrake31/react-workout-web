@@ -10,8 +10,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 import { Routes } from '../constants/routes';
-import { removeLocalToken } from '../features/auth/helpers/locStorage.helper';
-import { removeToken, selectToken } from '../features/auth/store/authSlice';
+import { removeLocalToken } from '../components/auth/helpers/locStorage.helper';
+import { removeToken, selectToken } from '../components/auth/store/authSlice';
 import { useAppDispatch, useAppSelector } from '../hooks';
 
 const Header = () => {
